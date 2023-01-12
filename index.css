@@ -348,7 +348,7 @@ input[type="range"]::-moz-range-thumb:hover {
         height: 20px;
     }
     .field__password {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
     .generator__wrapper {
         width: 88%;
