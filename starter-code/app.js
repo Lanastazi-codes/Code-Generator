@@ -59,7 +59,7 @@ const generatePassword = (
         );
         password += availableCharacters[randomIndex];
     }
-    console.log(password);
+    // console.log(password);
     return password;
 };
 
@@ -76,13 +76,14 @@ btn.addEventListener("click", () => {
         document.querySelector(".checkbox__numbers").checked;
     const checkboxSymbolscaseValue =
         document.querySelector(".checkbox__symbols").checked;
-    result.innerHTML = generatePassword(
+    let password = (result.innerHTML = generatePassword(
         length,
         checkboxUppercaseValue,
         checkboxLowercaseValue,
         checkboxNumberseValue,
         checkboxSymbolscaseValue
-    );
+    ));
+    showStrength(password);
 });
 
 // ! Copy to clipboard function
@@ -98,3 +99,74 @@ clipboard.addEventListener("click", () => {
     textarea.remove();
     alert("Password coppied to clipboard");
 });
+
+//! Strength function
+
+function showStrength(password) {
+    const stateHeading = document.querySelector(".states__text");
+    const firstState = document.getElementById("state-first");
+    const secondtState = document.getElementById("state-second");
+    const thirdState = document.getElementById("state-third");
+    const fourthState = document.getElementById("state-fourth");
+    const state = document.querySelector(".state");
+    let strength = 0;
+
+    //If password contains ...
+    if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) {
+        strength = strength + 1;
+    }
+    if (password.match(/([0-9])/)) {
+        strength = strength + 1;
+    }
+    if (password.match(/([!,%,&,@,#,$,^,*,?,_,~])/)) {
+        strength = strength + 1;
+    }
+    if (password.length > 7) {
+        strength = strength + 1;
+    }
+
+    if (strength < 2) {
+        stateHeading.innerHTML = "TOO WEAK!"; //!TOO WEAK! 12.8125rem
+        stateHeading.style.visibility = "visible";
+        // add
+        firstState.classList.add("too__weak");
+        document.querySelector(".strength__states").style.width = "100%";
+        // remove
+        state.classList.remove("weak");
+        state.classList.remove("medium");
+        state.classList.remove("strong");
+    } else if (strength === 2) {
+        stateHeading.innerHTML = "WEAK"; //!WEAK
+        stateHeading.style.visibility = "visible";
+        // add
+        firstState.classList.add("weak");
+        secondtState.classList.add("weak");
+        // remove
+        state.classList.remove("too__weak");
+        state.classList.remove("medium");
+        state.classList.remove("strong");
+    } else if (strength === 3) {
+        stateHeading.innerHTML = "MEDIUM"; //!MEDIUM
+        stateHeading.style.visibility = "visible";
+        // add
+        firstState.classList.add("medium");
+        secondtState.classList.add("medium");
+        thirdState.classList.add("medium");
+        // remove
+        state.classList.remove("too__weak");
+        state.classList.remove("weak");
+        state.classList.remove("strong");
+    } else if (strength === 4) {
+        stateHeading.innerHTML = "STRONG"; //!STRONG
+        stateHeading.style.visibility = "visible";
+        // add
+        firstState.classList.add("strong");
+        secondtState.classList.add("strong");
+        thirdState.classList.add("strong");
+        fourthState.classList.add("strong");
+        // remove
+        state.classList.remove("too__weak");
+        state.classList.remove("medium");
+        state.classList.remove("weak");
+    }
+}
