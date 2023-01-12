@@ -359,6 +359,6 @@ input[type="range"]::-moz-range-thumb:hover {
         margin-top: 20%;
     }
     .form__strength {
-        justify-content: space-between;
+        justify-content: center;
     }
 }
