@@ -1,16 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Password generator app</title>
-</head>
-<body>
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/images/favicon-32x32.png"
+        />
+        <link rel="stylesheet" href="index.css" />
 
-  Password Generator
+        <title>Frontend Mentor | Password generator app</title>
+    </head>
+    <body>
+        <div class="container">
+          <div class="generator__wrapper">
+              <h1 class="generator__heading">Password Generator</h1>
+              <!-- generator field -->
+              <div class="generator__field">
+                <div class="field__password">Your Password</div>
+                <img src="./assets/images/icon-copy.svg" class="field__copy clipboard"></img>
+              </div>
+              <!-- * FORM -->
+              <form id="generator__form" action="#">
+                <div class="character__wrapper">
+                  <h2 class="character__heading">Character Length</h2>
+                  <div class="character__amount slide-value">10</div>
+                </div>
+                <!--! RANGE -->
+                <div class="form__range">
+                  <input type="range" class="range__input" min="1" max="20" value="10">
+                  <div class="range__progressbar"></div>
+                </div>
+                  <!-- uppercase -->
+                  <div class="checkbox__wrapper">
+                    <input type="checkbox" name="uppercase" class="form__checkbox checkbox__uppercase">
+                    <label for="uppercase">Include Uppercase Letters</label>
+                  </div>
+                  <!-- Lowercase  -->
+                  <div class="checkbox__wrapper">
+                    <input type="checkbox" name="uppercase" class="form__checkbox checkbox__lowercase">
+                    <label for="uppercase">Include Lowercase Letters</label>
+                  </div>
+                  <!-- Include Numbers -->
+                  <div class="checkbox__wrapper">
+                    <input type="checkbox" name="uppercase" class="form__checkbox checkbox__numbers">
+                    <label for="uppercase">Include Numbers</label>
+                  </div>
+                  <!-- Include Symbols -->
+                  <div class="checkbox__wrapper">
+                    <input type="checkbox" name="uppercase" class="form__checkbox checkbox__symbols">
+                    <label for="uppercase">Include Symbols</label>
+                  </div>
+                  <!-- Strength states -->
+                  <div class="form__strength">
+                    <h2 class="strength__heading"></h2>
+                    <div class="strength__states">
+                      <div class="states__text">MEDIUM</div>
+                      <div class="states">
+                        <div class="state"></div>
+                        <div class="state"></div>
+                        <div class="state"></div>
+                        <div class="state"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Button -->
+                  <div id="btn" class="btn"><span>GENERATE</span><img src="./assets/images/icon-arrow-right.svg" alt="arrow"></в>
+                  <!-- <button type="submit" id="btn" class="btn"><span>GENERATE</span><img src="./assets/images/icon-arrow-right.svg" alt="arrow"></button> -->
+              </form>
+          </div>
+        </div>
+
+        <!-- Password Generator
 
   P4$5W0rD!
 
@@ -23,7 +87,7 @@
 
   Strength
 
-  Generate
-
-</body>
+  Generate -->
+    </body>
+    <script src="app.js"></script>
 </html>

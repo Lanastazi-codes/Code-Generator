@@ -1,0 +1,161 @@
+@font-face {
+    font-family: JetBrains Mono;
+    src: url("./assets/fonts/static/JetBrainsMono-Bold.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: JetBrains Mono, sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #18171f;
+    overflow: hidden;
+    color: #e6e5ea;
+    font-size: 1.125rem;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-bottom: 1.9375rem;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.generator__wrapper {
+    max-width: 33.75rem;
+    width: 100%;
+}
+.generator__heading {
+    font-size: 1.5rem;
+    color: #817d92;
+}
+.generator__field {
+    background-color: #24232c;
+    margin-bottom: 1.5rem;
+    width: 33.75rem;
+    height: 5rem;
+    padding: 0px 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.field__password {
+    font-size: 2rem;
+    line-height: 2.625rem;
+}
+.field__copy {
+    display: block;
+    width: 1.3125rem;
+    height: 1.5rem;
+}
+
+.field__copy:hover {
+}
+
+#generator__form {
+    background-color: #24232c;
+    padding: 24px 32px 32px;
+}
+
+.character__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.character__heading {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+}
+.character__amount {
+    color: #a4ffaf;
+    font-size: 2rem;
+    line-height: 2.625rem;
+}
+
+input[type="range"] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    /* background: #a4ffaf; */
+    background: linear-gradient(
+        90deg,
+        rgb(164, 255, 175) 50%,
+        rgb(24, 23, 31) 50%
+    );
+    height: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+/** input range thumb */
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    border: none;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.clipboard {
+    cursor: pointer;
+}
+
+.checkbox__wrapper {
+}
+.form__checkbox {
+}
+.checkbox__uppercase {
+}
+.checkbox__lowercase {
+}
+.checkbox__numbers {
+}
+.checkbox__symbols {
+}
+.form__strength {
+}
+.strength__heading {
+}
+.strength__states {
+}
+.states__text {
+}
+.states {
+}
+.state {
+}
+.btn {
+    cursor: pointer;
+    background-color: #a4ffaf;
+    color: #24232c;
+    width: 29.75rem;
+    height: 4.0625rem;
+    padding: 0 38%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
