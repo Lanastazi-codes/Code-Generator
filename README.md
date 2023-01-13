@@ -80,7 +80,7 @@ if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) {
 }
 ```
 
--   And from the second method I learned to make an array of numbers representing a key code
+-   From the second method I learned to make an array of numbers representing a key code
 
 ```js
 const characterCodes = Array.from(Array(26)).map((_, i) => i + 97);
